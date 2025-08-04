@@ -32,12 +32,31 @@ h1, h2, h3 {
     border-bottom: 1px solid #eee;
 }
 .header-inner {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* 左、中央、右の3カラム */
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+.header-left {
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* ロゴとテキストの間隔 */
+}
+.cocolink-logo {
+    height: 40px; /* ロゴの高さを指定 */
+    width: auto;
+}
+.header-left p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+.logo {
+    justify-self: center;
+    text-align: center;
 }
 .logo h1 {
     margin: 0;
@@ -48,7 +67,8 @@ h1, h2, h3 {
     margin: 0;
     font-size: 14px;
 }
-.contact-info {
+.header-right {
+    justify-self: end;
     display: flex;
     align-items: center;
 }
@@ -175,6 +195,9 @@ h1, h2, h3 {
     padding: 30px 0;
     text-align: center;
 }
+.footer p {
+    margin: 0 0 10px 0;
+}
 .copyright {
     margin-top: 20px;
     font-size: 0.9em;
@@ -184,14 +207,18 @@ h1, h2, h3 {
 /* レスポンシブ対応 (スマートフォン) */
 @media (max-width: 768px) {
     .header-inner {
+        grid-template-columns: 1fr; /* 1カラムにして縦に並べる */
+        gap: 10px;
+    }
+    .logo { order: 1; }
+    .header-left { order: 2; justify-self: center; }
+    .header-right {
+        order: 3;
+        justify-self: center;
         flex-direction: column;
-        align-items: flex-start;
+        gap: 10px;
     }
-    .contact-info {
-        margin-top: 15px;
-        width: 100%;
-        justify-content: space-between;
-    }
+    .contact-btn { margin-right: 0; }
     
     .nav-menu {
         display: none;
