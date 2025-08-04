@@ -3,12 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mirapokeホームページ</title>
+    <title>みらぽけ - 訪問看護ステーション</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>ようこそ！</h1>
-    <p>これはmirapokeのホームページです。</p>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <h1>みらぽけ</h1>
+                <p>訪問看護ステーション</p>
+            </div>
+            <div class="contact-info">
+                <a href="#contact" class="contact-btn">お問い合わせ</a>
+                <span class="tel">089-907-5680</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <button class="nav-toggle" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">みらぽけの想い</a></li>
+            <li><a href="#">不登校サポート</a></li>
+            <li><a href="#">カウンセリング</a></li>
+            <li><a href="#">ご利用案内</a></li>
+            <li><a href="#">事業所概要</a></li>
+            <li><a href="#contact">お問合せ</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h2>「学校、ちょっと疲れたな」——<br>あなたの気持ちに寄り添う、もう一つの居場所。</h2>
+                    <p>不登校のお子様への訪問看護サポート / 個別カウンセリングルーム併設</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>みらぽけの2大特徴</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>不登校サポート</h3>
+                        <p>専門の看護師がご自宅を訪問し、お子様の心と体の健康をサポートします。学習支援やコミュニケーションの練習など、一人ひとりに合わせたプランを提供します。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>カウンセリングルーム</h3>
+                        <p>併設のカウンセリングルームでは、臨床心理士がお子様や保護者様の悩みに寄り添います。安心して話せる空間で、心の負担を軽くするお手伝いをします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+             <div class="container">
+                <h2>お問い合わせ</h2>
+                <p>ご相談やご質問は、お電話または以下のフォームよりお気軽にご連絡ください。</p>
+                <p class="tel-large">TEL: 089-907-5680</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>【事業所概要】<br>みらぽけ訪問看護ステーション<br>愛媛県松山市 [ここに住所を記載]</p>
+            <p class="copyright">&copy; Mirapoke. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
