@@ -166,11 +166,15 @@ h1, h2, h3 {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: center;
+    text-align: left;
 }
 .feature-card h3 {
     color: var(--primary-color);
     margin-top: 0;
+    margin-bottom: 15px; /* 見出しと本文の間隔を調整 */
+    font-size: 1.4em; /* 見出しのフォントサイズを少し調整 */
+    line-height: 1.4; /* 行間を調整 */
+    text-align: center; /* タイトルを中央揃え */
 }
 
 /* お問い合わせセクション */
@@ -195,6 +199,62 @@ h1, h2, h3 {
     padding: 30px 0;
     text-align: center;
 }
+
+/* スタッフ紹介セクション */
+.staff-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+.staff-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.staff-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 30px 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.staff-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.staff-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color);
+}
+.staff-info .staff-name {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    color: var(--primary-color);
+}
+.staff-info .staff-title {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    color: #555;
+    font-weight: bold;
+}
+.staff-info .staff-qualification {
+    margin: 0;
+    font-size: 0.9em;
+    color: #333;
+}
+
 .footer p {
     margin: 0 0 10px 0;
 }
