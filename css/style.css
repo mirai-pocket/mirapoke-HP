@@ -3,7 +3,7 @@
     --primary-color: #228B22; /* ソフトな緑 */
     --accent-color: #FFA500;  /* オレンジ */
     --text-color: #333;
-    --bg-color: #fdfdfd;
+    --bg-color: #FAF9F6;      /* 薄いクリーム色 */
     --base-font-size: 16px;
 }
 
@@ -46,7 +46,7 @@ h1, h2, h3 {
     gap: 10px; /* ロゴとテキストの間隔 */
 }
 .cocolink-logo {
-    height: 40px; /* ロゴの高さを指定 */
+    height: 50px; /* ロゴの高さを指定 */
     width: auto;
 }
 .header-left p {
@@ -56,7 +56,16 @@ h1, h2, h3 {
 }
 .logo {
     justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo-text {
     text-align: center;
+}
+.logo-image {
+    height: 60px;
+    width: auto;
 }
 .logo h1 {
     margin: 0;
@@ -85,10 +94,14 @@ h1, h2, h3 {
 .contact-btn:hover {
     background-color: #e69500;
 }
-.tel {
-    font-size: 18px;
+.header-contact p {
+    margin: 0;
+    font-size: 16px;
     font-weight: bold;
     color: var(--primary-color);
+}
+.header-contact p.tel {
+    margin-bottom: 4px;
 }
 
 /* ナビゲーション */
@@ -140,6 +153,14 @@ h1, h2, h3 {
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
+.hero-diagonal-text {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    transform: rotate(-5deg);
+    animation: fadeIn 1.5s ease-out forwards;
+}
 .hero-text p {
     font-size: 1.2rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
@@ -154,6 +175,12 @@ h1, h2, h3 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
+    display: inline-block; /*  線を文字の幅に合わせる */
+    border-bottom: 3px solid var(--primary-color); /* 緑色の線 */
+    padding-bottom: 10px; /* 文字と線の間の余白 */
+}
+.features .container {
+    text-align: center; /* h2を中央揃えにするため */
 }
 .features-grid {
     display: grid;
@@ -175,6 +202,11 @@ h1, h2, h3 {
     line-height: 1.4; /* 行間を調整 */
     text-align: center; /* タイトルを中央揃え */
 }
+.feature-logo {
+    max-width: 150px; /* ロゴの最大幅を指定 */
+    margin: 0 auto 20px; /* 中央揃えと下の余白 */
+    display: block;
+}
 
 /* お問い合わせセクション */
 .contact-section {
@@ -185,10 +217,21 @@ h1, h2, h3 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
-.tel-large {
-    font-size: 1.8rem;
+.contact-details-main {
+    margin-top: 30px;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: var(--accent-color);
+    color: var(--text-color);
+}
+.contact-details-main p {
+    margin: 10px 0;
+}
+.contact-details-main a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.contact-details-main a:hover {
+    text-decoration: underline;
 }
 
 /* フッター */
@@ -229,8 +272,8 @@ h1, h2, h3 {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 .staff-photo {
-    width: 120px;
-    height: 120px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
@@ -241,6 +284,17 @@ h1, h2, h3 {
     margin-bottom: 5px;
     font-size: 1.3em;
     color: var(--primary-color);
+}
+.staff-name-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.8em;
+    margin-bottom: 10px;
+}
+.staff-name-container .staff-name,
+.staff-name-container .staff-title {
+    margin: 0; /* p, h4のデフォルトマージンをリセット */
 }
 .staff-info .staff-title {
     margin: 0 0 10px 0;
@@ -334,3 +388,126 @@ h1, h2, h3 {
 .hero-text {
     animation: fadeIn 1.5s ease-out forwards;
 }
+
+/* みらぽけの想いセクション */
+.about-section {
+    position: relative; /* 円を配置するため */
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden; /* はみ出した円を隠す */
+    background-color: #fdfdfd;
+}
+
+.about-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about-section h2 {
+    margin-bottom: 60px; /* メッセージとの間隔を広げる */
+    font-size: 2.2rem;
+}
+
+.about-message {
+    font-size: 1.5rem; /* 文字を大きく */
+    line-height: 2.8;   /* 行間を広くとる */
+    font-weight: 500;
+    color: #444;
+    max-width: 800px; /* 横幅を制限して中央に */
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+}
+
+.about-message p {
+    margin-bottom: 2.5em; /* 段落間のマージン */
+}
+
+.about-message p:last-child {
+    margin-bottom: 0;
+}
+
+/* パステルカラーの円の背景 */
+.about-section::before,
+.about-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    z-index: 0;
+    filter: blur(20px); /* 円をぼかす */
+}
+
+.about-section::before {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(173, 216, 230, 0.5); /* パステルブルー */
+    top: -80px;
+    left: -120px;
+}
+
+.about-section::after {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(255, 192, 203, 0.4); /* パステルピンク */
+    bottom: -150px;
+    right: -180px;
+}
+
+/* お知らせセクション */
+.news-section {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+.news-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    display: inline-block;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+.news-section .container {
+    text-align: center;
+}
+.news-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* 画像とテキストの比率を調整 */
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+    margin-top: 40px;
+    background: #fdfdfd;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+.news-image img {
+    width: 100%;
+    border-radius: 5px;
+}
+.news-content h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+.news-details {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    font-size: 1.1rem;
+}
+.news-details li {
+    margin-bottom: 12px;
+}
+.news-content .contact-btn {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* お知らせセクションのレスポンシブ対応 */
+@media (max-width: 900px) {
+    .news-card {
+        grid-template-columns: 1fr;
+    }
+}
+
