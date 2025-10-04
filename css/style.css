@@ -308,6 +308,21 @@ h1, h2, h3 {
     color: #333;
 }
 
+.staff-info .staff-furigana {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.staff-info .staff-name {
+    font-size: 2.6em; /* 名前サイズを大きく */
+}
+
+.staff-info .staff-qualification {
+    font-size: 1.8em; /* 資格サイズを大きく */
+    line-height: 1.6;
+}
+
 .footer p {
     margin: 0 0 10px 0;
 }
