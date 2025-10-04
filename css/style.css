@@ -263,7 +263,7 @@ h1, h2, h3 {
     border: 1px solid #eee;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: center;
+    text-align: left; /* 左揃えに変更 */
     padding: 30px 20px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -276,21 +276,23 @@ h1, h2, h3 {
     height: 240px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin: 0 auto 20px; /* 中央揃えを維持 */
+    display: block; /* 中央揃えのため */
     border: 3px solid var(--primary-color);
 }
 .staff-info .staff-name {
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: 1.3em;
+    font-size: 1.8em; /* サイズ調整 */
     color: var(--primary-color);
+    text-align: center; /* 名前は中央揃え */
 }
 .staff-name-container {
     display: flex;
     justify-content: center;
     align-items: baseline;
     gap: 0.8em;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .staff-name-container .staff-name,
 .staff-name-container .staff-title {
@@ -302,24 +304,34 @@ h1, h2, h3 {
     color: #555;
     font-weight: bold;
 }
-.staff-info .staff-qualification {
-    margin: 0;
-    font-size: 0.9em;
-    color: #333;
-}
-
 .staff-info .staff-furigana {
-    font-size: 1.2em;
+    font-size: 0.9em;
     color: #555;
+    margin-bottom: 20px;
+    text-align: center; /* フリガナも中央揃え */
+}
+
+.staff-qualifications {
+    margin-top: 15px;
+}
+
+.staff-qualifications h4 {
+    font-size: 1.1em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.staff-qualifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.staff-qualifications li {
+    font-size: 0.95em;
     margin-bottom: 8px;
-}
-
-.staff-info .staff-name {
-    font-size: 2.6em; /* 名前サイズを大きく */
-}
-
-.staff-info .staff-qualification {
-    font-size: 1.8em; /* 資格サイズを大きく */
     line-height: 1.6;
 }
 
