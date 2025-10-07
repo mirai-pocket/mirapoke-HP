@@ -539,3 +539,15 @@ h1, h2, h3 {
     }
 }
 
+/* フッターのリンクスタイル */
+.footer-links a {
+    color: #ffffff; /* リンクの色を白に */
+    text-decoration: none; /* 下線を消す */
+    transition: opacity 0.3s; /* ホバー時の透明度変化を滑らかに */
+}
+
+.footer-links a:hover {
+    opacity: 0.8; /* ホバー時に少し透明にする */
+    text-decoration: underline; /* ホバー時に下線を出す */
+}
+
