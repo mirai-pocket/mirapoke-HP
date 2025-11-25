@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>みらぽけ日記</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="images/logo-cocolink.png.png" alt="株式会社ここリンク ロゴ" class="cocolink-logo">
+                <p>株式会社ここリンク</p>
+            </div>
+            <div class="logo">
+                <div class="logo-text">
+                    <p>訪問看護ステーション</p>
+                    <h1>みらぽけ</h1>
+                </div>
+                <img src="images/mirapokelogo.png" alt="みらぽけ ロゴ" class="logo-image">
+            </div>
+            <div class="header-right">
+                <a href="index.html#contact" class="contact-btn">お問い合わせ</a>
+                <div class="header-contact">
+                    <p class="tel">TEL: 089-907-5680</p>
+                    <p class="fax">FAX: 089-907-5603</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <button class="nav-toggle" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="index.html#about">みらぽけの想い</a></li>
+            <li><a href="index.html#news">お知らせ</a></li>
+            <li><a href="blog.html">ブログ</a></li>
+            <li><a href="index.html#features">みらぽけの特徴</a></li>
+            <li><a href="index.html#guide">ご利用案内</a></li>
+            <li><a href="index.html#staff">スタッフ紹介</a></li>
+            <li><a href="company.html">事業所概要</a></li>
+            <li><a href="index.html#contact">お問合せ</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="blog-post-section">
+            <div class="container">
+                <article id="blog-post" class="blog-post-content">
+                    <!-- microCMSから取得した記事詳細がここに表示されます -->
+                </article>
+                <div class="blog-post-nav">
+                    <a href="blog.html" class="back-to-list-btn">ブログ一覧に戻る</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <strong>訪問看護ステーションみらぽけ</strong><br>
+                住所: 愛媛県松山市桑原3丁目6番14号
+            </p>
+            <div class="footer-links" style="margin: 10px 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="guideline.html">高齢者虐待防止のための指針</a>
+                <a href="regulation.html">運営規程</a>
+            </div>
+            <p class="copyright">&copy; Mirapoke. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/microcms-js-sdk/dist/microcms-js-sdk.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
