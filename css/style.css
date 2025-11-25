@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap');
+
 /* 基本設定 */
 :root {
     --primary-color: #228B22; /* ソフトな緑 */
@@ -8,12 +10,13 @@
 }
 
 body {
-    font-family: 'Yomogi', 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-family: "Zen Maru Gothic", sans-serif;
     margin: 0;
     color: var(--text-color);
     background-color: var(--bg-color);
     font-size: var(--base-font-size);
-    line-height: 1.7;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
 }
 
 .container {
@@ -22,8 +25,9 @@ body {
     padding: 0 20px;
 }
 
-h1, h2, h3 {
-    font-weight: 600;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 700;
 }
 
 /* ヘッダー */
@@ -71,7 +75,6 @@ h1, h2, h3 {
     margin: 0;
     font-size: 36px;
     color: #00A9E0; /* オーシャンブルー */
-    font-family: 'Yomogi', sans-serif; /* Yomogiフォントに変更 */
 }
 .logo p {
     margin: 0;
@@ -83,6 +86,7 @@ h1, h2, h3 {
     align-items: center;
 }
 .contact-btn {
+    font-family: "Kiwi Maru", serif;
     background-color: var(--accent-color);
     color: white;
     padding: 10px 20px;
