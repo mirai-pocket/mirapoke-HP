@@ -1,7 +1,1 @@
-feat: Add guideline, company, and regulation pages
-
-- Add /guideline.html for elderly abuse prevention.
-- Add /company.html for company overview.
-- Add /regulation.html for operational regulations.
-- Update footer and navigation to link to new pages.
-- Style footer links to be white for better visibility.
+ブログ機能実装直前のバックアップ
