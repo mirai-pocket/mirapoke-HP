@@ -1,5 +1,5 @@
 // microCMSのクライアント初期化
-const client = microcms.createClient({
+const client = MicroCMS.createClient({
   serviceDomain: 'mirapoke-site',
   apiKey: '2XX7HAfdbEskjOaYZugmwdjf3CAw9o87xTM6',
 });
@@ -8,6 +8,14 @@ const client = microcms.createClient({
 function formatDate(dateString) {
   const date = new Date(dateString);
   return `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+}
+
+// エラーメッセージを表示するヘルパー関数
+function displayError(containerId, message) {
+  const container = document.getElementById(containerId);
+  if (container) {
+    container.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`;
+  }
 }
 
 // トップページ：最新記事3件を取得して表示
@@ -30,7 +38,7 @@ async function displayLatestPosts() {
       <div class="blog-card">
         <a href="blog-post.html?id=${post.id}">
           <div class="blog-card-image">
-            <img src="${post.eyecatch.url}?w=400&h=250&fit=crop" alt="">
+            <img src="${post.eyecatch ? (post.eyecatch.url + '?w=400&h=250&fit=crop') : 'https://via.placeholder.com/400x250?text=No+Image'}" alt="アイキャッチ画像">
           </div>
           <div class="blog-card-content">
             <p class="blog-card-date">${formatDate(post.publishedAt)}</p>
@@ -43,11 +51,9 @@ async function displayLatestPosts() {
     container.innerHTML = html;
   } catch (error) {
     console.error('ブログ記事の取得に失敗しました:', error);
-    const section = document.getElementById('blog');
-    if(section) section.style.display = 'none';
+    displayError('blog', 'ブログ記事の読み込みに失敗しました。');
   }
 }
-
 
 // ブログ一覧ページ：全記事を取得して表示
 async function displayAllPosts() {
@@ -69,12 +75,12 @@ async function displayAllPosts() {
       <div class="blog-card">
         <a href="blog-post.html?id=${post.id}">
           <div class="blog-card-image">
-            <img src="${post.eyecatch.url}?w=400&h=250&fit=crop" alt="">
+            <img src="${post.eyecatch ? (post.eyecatch.url + '?w=400&h=250&fit=crop') : 'https://via.placeholder.com/400x250?text=No+Image'}" alt="アイキャッチ画像">
           </div>
           <div class="blog-card-content">
             <p class="blog-card-date">${formatDate(post.publishedAt)}</p>
             <h3 class="blog-card-title">${post.title}</h3>
-            <div class="blog-card-category">${post.category.name}</div>
+            ${post.category ? `<div class="blog-card-category">${post.category.name}</div>` : ''}
           </div>
         </a>
       </div>
@@ -83,7 +89,7 @@ async function displayAllPosts() {
     container.innerHTML = html;
   } catch (error) {
     console.error('ブログ記事の取得に失敗しました:', error);
-    container.innerHTML = '<p>記事の読み込みに失敗しました。時間をおいて再度お試しください。</p>';
+    displayError('blog-list', '記事の読み込みに失敗しました。時間をおいて再度お試しください。');
   }
 }
 
@@ -96,7 +102,7 @@ async function displayPostDetail() {
   const postId = params.get('id');
 
   if (!postId) {
-    container.innerHTML = '<p>記事が見つかりませんでした。</p>';
+    displayError('blog-post', '記事が見つかりませんでした。');
     return;
   }
 
@@ -111,7 +117,7 @@ async function displayPostDetail() {
     const html = `
       <h1 class="blog-post-title">${post.title}</h1>
       <p class="blog-post-date">${formatDate(post.publishedAt)}</p>
-      <div class="blog-post-category">${post.category.name}</div>
+      ${post.category ? `<div class="blog-post-category">${post.category.name}</div>` : ''}
       <div class="blog-post-body">
         ${post.content}
       </div>
@@ -120,7 +126,7 @@ async function displayPostDetail() {
     container.innerHTML = html;
   } catch (error) {
     console.error('記事詳細の取得に失敗しました:', error);
-    container.innerHTML = '<p>記事の読み込みに失敗しました。時間をおいて再度お試しください。</p>';
+    displayError('blog-post', '記事の読み込みに失敗しました。時間をおいて再度お試しください。');
   }
 }
 
