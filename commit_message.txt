@@ -1,5 +1,5 @@
-fix: MicroCMS SDKの読み込みとJSのエラーハンドリングを修正
+fix: Uncaught ReferenceErrorを修正し、fetchでMicroCMSデータを取得
 
-- `index.html`のMicroCMS SDKをCDN形式に修正
-- `js/blog.js`でグローバル変数を利用するよう変更
+- `index.html`, `blog.html`, `blog-post.html`からMicroCMS SDKのCDNスクリプトタグを削除
+- `js/blog.js`をブラウザ標準の`fetch`関数を使用するよう完全に書き換え
 - API取得失敗時にエラーメッセージを表示する機能を追加
