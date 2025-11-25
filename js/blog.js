@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 記事カードを生成する関数
   function createBlogCardHtml(article) {
     const date = formatDate(article.publishedAt || article.createdAt);
-    const imageSrc = article.eyecatch ? article.eyecatch.url + '?w=400&h=250&fit=crop' : 'https://via.placeholder.com/400x250?text=No+Image';
+    const imageSrc = article.eyecatch ? article.eyecatch.url + '?w=400&h=250&fit=contain&bg=f9f9f9' : 'https://via.placeholder.com/400x250?text=No+Image';
     const categoryHtml = article.category ? `<div class="blog-card-category">${article.category.name}</div>` : '';
     
     return `
       <div class="blog-card">
         <a href="blog-post.html?id=${article.id}">
           <div class="blog-card-image">
-            <img src="${imageSrc}" alt="アイキャッチ画像">
+            <img src="${imageSrc}" alt="アイキャッチ画像" style="background-color:#f9f9f9;">
           </div>
           <div class="blog-card-content">
             <p class="blog-card-date">${date}</p>
