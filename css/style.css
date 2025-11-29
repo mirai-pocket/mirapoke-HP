@@ -999,3 +999,13 @@ h1, h2, h3, h4, h5, h6 {
 .feature-text strong {
     color: #ff4500; /* サイトの強調色（オレンジレッド） */
 }
+
+/* 「cocod」セクションの新しいテキストコンテナースタイル */
+.feature-text-content p {
+    margin-bottom: 1.5em; /* 段落の下に余白 */
+    line-height: 1.8;
+}
+
+.feature-text-content strong {
+    color: #ff4500; /* サイトの強調色（オレンジレッド） */
+}
