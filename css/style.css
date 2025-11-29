@@ -609,7 +609,7 @@ h1, h2, h3, h4, h5, h6 {
 .blog-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .blog-card-content {
@@ -752,4 +752,51 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1em;
         line-height: 1.8;
     }
+}
+/* トップページのブログリスト用のスタイル */
+.blog-post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    border-top: 1px solid #eee;
+}
+
+.blog-post-list li {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-post-list .post-date {
+    margin-right: 20px;
+    font-size: 0.9em;
+    color: #666;
+    width: 100px; /* 日付の幅を固定して揃える */
+}
+
+.blog-post-list .post-title {
+    font-weight: bold;
+}
+
+.blog-post-list .post-title a {
+    text-decoration: none;
+    color: #333;
+}
+
+.blog-post-list .post-title a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* NEWバッジ用のスタイル */
+.new-badge {
+    background-color: #ff4500; /* オレンジレッド */
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle; /* タイトルとの垂直位置を調整 */
 }

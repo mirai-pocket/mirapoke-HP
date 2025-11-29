@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // トップページ：最新記事3件を取得して表示
   if (latestPostsContainer) {
-    console.log('トップページ：最新ブログデータの取得を開始します...');
     fetch(BASE_URL + '?limit=3&orders=-publishedAt', {
       headers: {
         'X-MICROCMS-API-KEY': API_KEY
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then(data => {
-      console.log('トップページ：データ取得成功:', data);
       const articles = data.contents;
       
       if (articles.length === 0) {
@@ -65,13 +63,28 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      let html = '<div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">';
-      articles.forEach(article => {
-        html += createBlogCardHtml(article);
+      const listElement = document.createElement('ul');
+      listElement.classList.add('blog-post-list');
+
+      articles.forEach((article, index) => {
+        const listItem = document.createElement('li');
+        const date = formatDate(article.publishedAt || article.createdAt);
+        
+        // すべての記事をリンクにする
+        const titleHtml = `<a href="blog-post.html?id=${article.id}">${article.title}</a>`;
+        
+        let newBadge = '';
+        if (index === 0) {
+          // 最新の記事にNEWバッジを追加
+          newBadge = '<span class="new-badge">NEW</span> ';
+        }
+        
+        listItem.innerHTML = `<span class="post-date">${date}</span><span class="post-title">${newBadge}${titleHtml}</span>`;
+        listElement.appendChild(listItem);
       });
-      html += '</div>';
       
-      latestPostsContainer.innerHTML = html;
+      latestPostsContainer.innerHTML = ''; // コンテナをクリア
+      latestPostsContainer.appendChild(listElement);
     })
     .catch(error => {
       console.error('トップページ：ブログ記事の取得に失敗しました:', error);
