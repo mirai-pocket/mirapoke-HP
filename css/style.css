@@ -989,3 +989,13 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.8em;
     }
 }
+
+/* 「みらぽけの特徴」セクションの新しいテキストスタイル */
+.feature-text p {
+    margin-bottom: 1.5em; /* 段落の下に余白 */
+    line-height: 1.8;
+}
+
+.feature-text strong {
+    color: #ff4500; /* サイトの強調色（オレンジレッド） */
+}
