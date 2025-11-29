@@ -800,3 +800,192 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 8px;
     vertical-align: middle; /* タイトルとの垂直位置を調整 */
 }
+
+/* --- ご利用案内ページ (service.html) --- */
+
+/* ページヒーロー */
+.page-hero {
+    background-color: #fdfaf4; /* 既存の薄い背景色 */
+    padding: 60px 20px;
+    text-align: center;
+}
+.page-title {
+    font-size: 2.5em;
+    color: #5a4a42; /* 温かみのある茶色 */
+    margin-bottom: 10px;
+}
+.page-subtitle {
+    font-size: 1.2em;
+    color: #777;
+}
+
+/* 共通セクションスタイル */
+.service-section {
+    padding: 60px 20px;
+}
+.service-section.bg-light {
+    background-color: #fdfaf4;
+}
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #5a4a42;
+}
+.service-intro {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* 対象者グリッド */
+.target-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.target-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+.target-card:hover {
+    transform: translateY(-5px);
+}
+.target-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.target-card h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #5a4a42;
+}
+
+/* サービス内容グリッド */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.service-card {
+    background: #fdfaf4;
+    border-radius: 15px;
+    padding: 30px;
+}
+.service-card h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #5a4a42;
+    text-align: center;
+}
+
+/* ご利用の流れ */
+.step-flow {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.step-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    border: 2px solid #f0eade;
+}
+.step-number {
+    background: #5a4a42;
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.step-card h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.step-arrow {
+    text-align: center;
+    font-size: 2em;
+    color: #5a4a42;
+    margin-bottom: 20px;
+}
+
+/* 費用について */
+.cost-info-box {
+    background: #fff;
+    border: 3px dashed #f0eade;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.cost-info-box h4 {
+    font-size: 1.4em;
+    color: #5a4a42;
+    text-align: center;
+}
+.cost-info-box hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+.cost-note {
+    margin-top: 20px;
+    font-size: 0.9em;
+    text-align: center;
+    color: #777;
+}
+
+/* フッター前CTA */
+.cta-section {
+    background-color: #5a4a42;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+.cta-section p {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.cta-tel {
+    background-color: #fff;
+    color: #5a4a42;
+}
+.cta-mail {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+.cta-mail:hover {
+    background-color: #fff;
+    color: #5a4a42;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2em;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+}
