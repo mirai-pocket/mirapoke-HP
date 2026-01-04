@@ -1,5 +1,1 @@
-fix: Uncaught ReferenceErrorを修正し、fetchでMicroCMSデータを取得
-
-- `index.html`, `blog.html`, `blog-post.html`からMicroCMS SDKのCDNスクリプトタグを削除
-- `js/blog.js`をブラウザ標準の`fetch`関数を使用するよう完全に書き換え
-- API取得失敗時にエラーメッセージを表示する機能を追加
+feat: トップページの特徴セクション「フリースペース（みらぽけのいえ）」NPO情報更新
